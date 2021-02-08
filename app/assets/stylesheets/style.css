@@ -45,8 +45,9 @@ header {
   padding: 20px;
 }
 
-.app-name {
+.app-name a{
   font-size: 40px;
+  padding: 0 10px;
 }
 
 .descriptions {
@@ -259,4 +260,10 @@ h1 {
 .text {
   text-align: center;
   font-size: 25px;
+}
+
+/* 新規投稿ページ */
+
+.hidden {
+  display: none;
 }

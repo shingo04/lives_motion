@@ -13,4 +13,6 @@ class User < ApplicationRecord
       validates :bmr
     end
   end
+
+  has_many :tweets
 end
