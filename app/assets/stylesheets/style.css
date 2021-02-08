@@ -1,0 +1,262 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100vw;
+  background-color:  #00aaff;
+  padding: 20px;
+}
+
+.app-name {
+  font-size: 40px;
+}
+
+.descriptions {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.how-to-use {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.use button {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 18px 10px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.how button {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 18px 10px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.description {
+  color: violet;
+  width: 100%;
+  background-color: skyblue;
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+  overflow-x: hidden;
+  left: 0;
+  text-align: center;
+  height: 0;
+  transition: .5s;
+}
+
+.description.open-menu{
+  height: 100%;
+}
+
+.how-to {
+  color: blue;
+  width: 100%;
+  background-color: skyblue;
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+  overflow-x: hidden;
+  left: 0;
+  text-align: center;
+  height: 0;
+  transition: .5s;
+}
+
+.how-to.open-menu{
+  height: 100%;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+  padding: 15px;
+}
+
+.btn-menu {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+nav {
+  background-color: black;
+  position: absolute;
+  z-index: 3;
+  top: 60px;
+  right: 0;
+  overflow-x: hidden;
+  text-align: center;
+  width: 0;
+  transition: .5s;
+}
+
+nav a:hover {
+  background-color: blue;
+}
+
+.log-out a:hover {
+  background-color: red;
+}
+
+nav.open-menu {
+  width: 15%;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-left a {
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.user-right a {
+  font-size: 20px;
+  border: 1px solid #ffffff;
+  padding: 5px;
+}
+
+/* フッター */
+
+footer {
+  background-color: #1b2024;
+  height: auto;
+  width: 100vw;
+  text-align: center;
+}
+
+.footer-menu {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-menu ul {
+  font-size: 12px;
+}
+
+.footer-menu a:hover {
+  color: #00aaff;
+}
+
+.contact-us {
+  display: flex;
+  justify-content: space-around;
+  background-color: #888888;
+  margin-top: 20px;
+}
+
+.contact-us a:hover {
+  color: #305989;
+}
+
+.company {
+  background-color: #888888;
+}
+
+/* 一覧ページ */
+h1 {
+  text-align: center;
+}
+
+.content {
+  margin: 20px auto;
+  border: #00aaff solid 5px;
+  border-radius: 30px;
+  padding: 20px;
+  width: 50%;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  border-bottom: solid 2px #00aaff;
+  
+}
+
+.user-icon {
+  border: black 2px solid;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+}
+
+.user-name {
+  color: #1b2024;
+  font-size: 30px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  text-align: center;
+  font-size: 25px;
+}

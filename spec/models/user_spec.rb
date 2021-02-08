@@ -40,20 +40,60 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Age can't be blank")
       end
+      it "ageが全角では登録できない" do
+        @user.age = "１２３"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Age is not a number")
+      end
+      it "ageが英数字混合では登録できない" do
+        @user.age = "12cfg"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Age is not a number")
+      end
       it "heightが空では登録できない" do
         @user.height = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Height can't be blank")
+      end
+      it "heightが全角では登録できない" do
+        @user.height = "１１２"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Height is not a number")
+      end
+      it "heightが英数字混合では登録できない" do
+        @user.height = "cccdg123"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Height is not a number")
       end
       it "weightが空では登録できない" do
         @user.weight = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Weight can't be blank")
       end
+      it "weightが全角では登録できない" do
+        @user.weight = "１２３４"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Weight is not a number")
+      end
+      it "weightが英数字混合では登録できない" do
+        @user.weight = "ffgfds234"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Weight is not a number")
+      end
       it "bmrが空では登録できない" do
         @user.bmr = nil
         @user.valid?
         expect(@user.errors.full_messages).to include("Bmr can't be blank")
+      end
+      it "bmrが全角では登録できない" do
+        @user.bmr = "１２３４"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Bmr is not a number")
+      end
+      it "bmrが英数字混合では登録できない" do
+        @user.bmr = "dc25f"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Bmr is not a number")
       end
     end
   end
