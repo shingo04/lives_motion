@@ -1,6 +1,9 @@
 class TweetsController < ApplicationController
   def index
-    
+    @tweets = Tweet.includes(:user).order(id: "DESC").last(10)
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
   end
 
   def new
