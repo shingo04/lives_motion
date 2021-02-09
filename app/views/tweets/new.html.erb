@@ -1,15 +1,15 @@
 <%= form_with(model: @tweet, local: true) do |f| %>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, placeholder: "投稿内容を入力してください", autofocus: true %>
-  </div>
-  <label class="form-image">
-    <label>
-      <%= f.label :image %>
-      <%= f.file_field :image, class: 'hidden' %>
-    </label>
-  </label>
-  <div class="actions">
-    <%= f.submit "投稿" %>
+  <div class="new-form">
+    <div class="content-form">
+      <div class="form-text">
+        <%= f.label :content, "新規投稿" , class: 'content-title' %><br />
+        <%= f.text_area :content, placeholder: "投稿内容を入力してください", autofocus: true, class: 'content-text' %>
+      </div>
+      <label class="form-image">
+        <%= f.label :image, "画像を選択してください", class: 'image' %>
+        <%= f.file_field :image %>
+      </label>
+      <%= f.submit "投稿", class: 'submit-btn' %>
+    </div>
   </div>
 <% end %>

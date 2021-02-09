@@ -16,7 +16,7 @@ function index() {
   });
 
   descriptions.addEventListener('mouseover', () => {
-    descriptions.setAttribute("style", "background-color:skyblue;")
+    descriptions.setAttribute("style", "border-bottom:skyblue 10px solid;")
   });
 
   descriptions.addEventListener('mouseout', () => {
@@ -24,7 +24,7 @@ function index() {
   });
 
   howToUse.addEventListener('mouseover', () => {
-    howToUse.setAttribute("style", "background-color:skyblue;")
+    howToUse.setAttribute("style", "border-bottom:skyblue 10px solid;")
   });
 
   howToUse.addEventListener('mouseout', () => {
