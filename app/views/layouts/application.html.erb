@@ -30,7 +30,7 @@
         </div>
       </div>
       <% if user_signed_in? %>
-        <button class="btn-menu">メニュー</button>
+        <button class="btn-menu"><%= @user.nickname %></button>
           <nav>
             <ul>
               <li><%= link_to "マイページ", "#", data: {"turbolinks"=>false} %></li>
