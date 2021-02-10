@@ -1,0 +1,77 @@
+<div class="user-show">
+  <div class="profile">
+    <table>
+      <td colspan="2" class="profile-title">プロフィール</td>
+      <tr>
+        <td class="record-title">ユーザー名</td>
+        <td class="record-content"><%= @user.nickname %></td>
+      </tr>
+      <tr>
+        <td class="record-title">年齢</td>
+        <td class="record-content"><%= @user.age %>歳</td>
+      </tr>
+      <tr>
+        <td class="record-title">身長</td>
+        <td class="record-content"><%= @user.height %>cm</td>
+      </tr>
+      <tr>
+        <td class="record-title">体重</td>
+        <td class="record-content"><%= @user.weight %>kg</td>
+      </tr>
+      <tr>
+        <td class="record-title">基礎代謝</td>
+        <td class="record-content"><%= @user.bmr %>kcal</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="introduce">自己紹介</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="record-content"><%= @user.introduction %></td>
+      </tr>
+    </table>
+    <div class="profile-button">
+      <%= link_to "ユーザー情報を編集する", edit_user_registration_path, data: {"turbolinks"=>false} %>
+    </div>
+  </div>
+  <div class="motion-result">
+    <table>
+      <tr>
+        <td class="motion-heading">トレーニング名</td>
+        <td class="motion-heading">回数/距離</td>
+        <td class="motion-heading">消費カロリー</td>
+      </tr>
+      <tr>
+        <td class="motion-title">ランニング</td>
+        <td class="motion-amount">10km</td>
+        <td class="motion-content">1000kcal</td>
+      </tr>
+      <tr>
+        <td class="motion-title">腹筋</td>
+        <td class="motion-amount">100回</td>
+        <td class="motion-content">1000kcal</td>
+      </tr>
+      <tr>
+        <td class="motion-title">スクワット</td>
+        <td class="motion-amount">100回</td>
+        <td class="motion-content">1000kcal</td>
+      </tr>
+      <tr>
+        <td class="motion-title">腕立て</td>
+        <td class="motion-amount">100回</td>
+        <td class="motion-content">1000kcal</td>
+      </tr>
+      <tr>
+        <td class="motion-title">背筋</td>
+        <td class="motion-amount">100回</td>
+        <td class="motion-content">1000kcal</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="motion-title">合計</td>
+        <td class="motion-content">5000kcal</td>
+      </tr>
+    </table>
+    <div class="profile-button">
+      <%= link_to "トレーニングをする", edit_user_registration_path, data: {"turbolinks"=>false} %>
+    </div>
+  </div>
+</div>
