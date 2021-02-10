@@ -237,11 +237,6 @@ footer {
 }
 
 /* 一覧ページ */
-.contents {
-  height: 100vh;
-  overflow: scroll;
-}
-
 h1 {
   text-align: center;
 }
@@ -340,13 +335,14 @@ h1 {
 
 /* ユーザー詳細ページ */
 .user-show {
-  display: flex;
-  justify-content: space-around;
   padding: 35px;
 }
 
-.profile {
-  width: 50%;
+table {
+  width: 70%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  word-break: break-all;
 }
 
 .profile-title {
@@ -355,40 +351,10 @@ h1 {
   text-align: center;
   padding: 10px 0;
   font-size: 30px;
-  font-weight: bold;
-  height: 70px;
+  font-weight: bolder;
 }
 
-.record-title {
-  position: relative;
-  width: 50%;
-  background-color: #52c2d0;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.record-content {
-  font-size: 25px;
-  word-break: break-all;
-  overflow-wrap: break-word;
-}
-
-.motion-result {
-  width: 60%;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-  margin: 30px 20px;
-  padding: 10px;
-}
-
-table tr{
+table tr {
   border-bottom: solid 2px white;
 }
 
@@ -396,16 +362,17 @@ table tr:last-child{
   border-bottom: none;
 }
 
-.introduce {
+table th {
+  position: relative;
+  width: 30%;
   background-color: #52c2d0;
   color: white;
   text-align: center;
   padding: 10px 0;
   font-size: 30px;
-  font-weight: bold;
 }
 
-.record-title:after{
+table th:after {
   display: block;
   content: "";
   width: 0px;
@@ -418,70 +385,44 @@ table tr:last-child{
   border-bottom: 10px solid transparent;
 }
 
-table td{
-  width: 35%;
+.introduce {
+  width: 30%;
+  background-color: #52c2d0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.introduce-content {
+  padding: 20px 50px;
+}
+
+table td {
+  text-align: left;
+  width: 40%;
   text-align: center;
   background-color: #eee;
-  padding: 10px 10px;
+  padding: 10px 0;
+  font-size: 20px;
 }
 
 .profile-button a {
   text-align: center;
   width: 40%;
   color: #1b2024;
-  margin: 10px auto;
+  margin: 10px auto 50px;
   padding: 10px 20px;
   border: blueviolet 3px solid;
   border-radius: 30px;
 }
 
-.motion-heading {
-  position: relative;
-  width: 40%;
-  height: 70px;
+.motion-title {
   background-color: #00aaff;
   color: white;
   text-align: center;
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  border-right: oldlace 1px solid;
-}
-
-.motion-title {
-  position: relative;
-  width: 30%;
-  background-color: #52c2d0;
-  color: white;
-  text-align: center;
   padding: 10px 0;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.motion-title:after{
-  display: block;
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  top:calc(50% - 10px);
-  right:-10px;
-  border-left: 10px solid #52c2d0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-
-.motion-amount {
-  width: 20%;
-  font-size: 20px;
-  text-align: center;
-  background-color: #eee;
-}
-
-.motion-content {
-  width: 30%;
-  font-size: 20px;
-  text-align: center;
-  background-color: #eee;
+  font-size: 25px;
+  font-weight: bolder;
 }

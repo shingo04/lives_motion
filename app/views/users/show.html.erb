@@ -1,32 +1,34 @@
 <div class="user-show">
   <div class="profile">
     <table>
-      <td colspan="2" class="profile-title">プロフィール</td>
       <tr>
-        <td class="record-title">ユーザー名</td>
-        <td class="record-content"><%= @user.nickname %></td>
+        <td colspan="2" class="profile-title">プロフィール</td>
       </tr>
       <tr>
-        <td class="record-title">年齢</td>
-        <td class="record-content"><%= @user.age %>歳</td>
+        <th>ユーザー名</th>
+        <td><%= @user.nickname %></td>
       </tr>
       <tr>
-        <td class="record-title">身長</td>
-        <td class="record-content"><%= @user.height %>cm</td>
+        <th>年齢</th>
+        <td><%= @user.age %>歳</td>
       </tr>
       <tr>
-        <td class="record-title">体重</td>
-        <td class="record-content"><%= @user.weight %>kg</td>
+        <th>身長</th>
+        <td><%= @user.height %>cm</td>
       </tr>
       <tr>
-        <td class="record-title">基礎代謝</td>
-        <td class="record-content"><%= @user.bmr %>kcal</td>
+        <th>体重</th>
+        <td><%= @user.weight %>kg</td>
+      </tr>
+      <tr>
+        <th>基礎代謝</th>
+        <td><%= @user.bmr %>kcal</td>
       </tr>
       <tr>
         <td colspan="2" class="introduce">自己紹介</td>
       </tr>
       <tr>
-        <td colspan="2" class="record-content"><%= @user.introduction %></td>
+        <td colspan="2" class="introduce-content"><%= @user.introduction %></td>
       </tr>
     </table>
     <div class="profile-button">
@@ -36,38 +38,37 @@
   <div class="motion-result">
     <table>
       <tr>
-        <td class="motion-heading">トレーニング名</td>
-        <td class="motion-heading">回数/距離</td>
-        <td class="motion-heading">消費カロリー</td>
+        <td class="motion-title">トレーニングメニュー</td>
+        <td class="motion-title">距離/回数</td>
+        <td class="motion-title">消費カロリー</td>
       </tr>
       <tr>
-        <td class="motion-title">ランニング</td>
-        <td class="motion-amount">10km</td>
-        <td class="motion-content">1000kcal</td>
+        <th>ランニング</th>
+        <td>10km</td>
+        <td>1000kcal</td>
       </tr>
       <tr>
-        <td class="motion-title">腹筋</td>
-        <td class="motion-amount">100回</td>
-        <td class="motion-content">1000kcal</td>
+        <th>腹筋</th>
+        <td>100回</td>
+        <td>1000kcal</td>
       </tr>
       <tr>
-        <td class="motion-title">スクワット</td>
-        <td class="motion-amount">100回</td>
-        <td class="motion-content">1000kcal</td>
+        <th>スクワット</th>
+        <td>100回</td>
+        <td>1000kcal</td>
       </tr>
       <tr>
-        <td class="motion-title">腕立て</td>
-        <td class="motion-amount">100回</td>
-        <td class="motion-content">1000kcal</td>
+        <th>腕立て</th>
+        <td>100回</td>
+        <td>1000kcal</td>
       </tr>
       <tr>
-        <td class="motion-title">背筋</td>
-        <td class="motion-amount">100回</td>
-        <td class="motion-content">1000kcal</td>
-      </tr>
-      <tr>
-        <td colspan="2" class="motion-title">合計</td>
-        <td class="motion-content">5000kcal</td>
+        <th>背筋</th>
+        <td>100回</td>
+        <td>1000kcal</td>
+      </tr><tr>
+        <th colspan="2">合計</th>
+        <td>5000kcal</td>
       </tr>
     </table>
     <div class="profile-button">
