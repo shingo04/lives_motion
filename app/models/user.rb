@@ -15,4 +15,5 @@ class User < ApplicationRecord
   end
 
   has_many :tweets
+  has_many :motions
 end

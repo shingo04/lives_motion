@@ -35,7 +35,7 @@
             <ul>
               <li><%= link_to "マイページ", user_path(current_user.id), data: {"turbolinks"=>false} %></li>
               <li><%= link_to "新規投稿", new_tweet_path, data: {"turbolinks"=>false} %></li>
-              <li><%= link_to "Motions", "#", data: {"turbolinks"=>false} %></li>
+              <li><%= link_to "Motions", new_motion_path, data: {"turbolinks"=>false} %></li>
               <li class="log-out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks"=>false} %></li>
             </ul>
           </nav>

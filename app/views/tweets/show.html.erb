@@ -1,0 +1,12 @@
+<div class="show-content">
+<div class="content">
+  <div class="user">
+    <div class="user-icon"></div>
+    <%= link_to @tweet.user.nickname, user_path(@tweet.user.id), class: "user-name", data: {"turbolinks"=>false} %>
+  </div>
+    <%= image_tag @tweet.image.variant(resize: '400x400'), class: 'image' if @tweet.image.attached? %>
+    <div class="text">
+      <%= @tweet.content %>
+   </div>
+</div>
+</div>

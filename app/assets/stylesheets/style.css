@@ -272,6 +272,13 @@ h1 {
 .text {
   text-align: center;
   font-size: 25px;
+  color: #1b2024;
+}
+
+.text a{
+  text-align: center;
+  font-size: 25px;
+  color: #1b2024;
 }
 
 /* 新規投稿ページ */
@@ -345,6 +352,12 @@ table {
   word-break: break-all;
 }
 
+.user-motions {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
 .profile-title {
   background-color: #00aaff;
   color: white;
@@ -408,6 +421,27 @@ table td {
   font-size: 20px;
 }
 
+.create-motion {
+  text-align: center;
+  font-size: 30px;
+}
+
+.motion-title {
+  background-color: #00aaff;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.user-cal {
+  display: inline-block;
+  height: 30px;
+  width: 30%;
+  margin: 0 auto;
+}
+
 .profile-button a {
   text-align: center;
   width: 40%;
@@ -418,11 +452,58 @@ table td {
   border-radius: 30px;
 }
 
-.motion-title {
-  background-color: #00aaff;
-  color: white;
+/* トレーニング入力ページ */
+
+.motion-form {
+  height: calc(100vh - 150px);
+}
+
+.motion-table {
   text-align: center;
-  padding: 10px 0;
-  font-size: 25px;
-  font-weight: bolder;
+  padding: 20px;
+  margin: 100px auto;
+  border-radius: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-number {
+  height: 30px;
+  width: 60%;
+  font-size: 18px;
+  text-align: center;
+  outline: none;
+}
+
+.cal {
+  display: inline-block;
+  background-color: #ffffff;
+  border: #1b2024 1px solid;
+  border-radius: 5px;
+  height: 30px;
+  width: 55%;
+  margin: 0 auto;
+}
+
+/* トレーニング詳細ページ */
+.edit-buttons {
+  margin: 10px auto 50px;
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit-button a {
+  color: #1b2024;
+  padding: 10px 100px;
+  border: blueviolet 3px solid;
+  border-radius: 30px;
+}
+
+/* ツイート詳細ページ */
+.show-content {
+  height: 100vh;
+  margin-top: 100px;
 }

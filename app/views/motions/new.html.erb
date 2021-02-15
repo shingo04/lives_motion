@@ -1,0 +1,44 @@
+<%= form_with(model: @motion, local: true) do |f| %>
+  <div class="motion-form">
+    <div class="motion-table">
+      <div class="hidden" id="weight"><%= @user.weight %></div>
+      <table>
+        <tr>
+          <td class="motion-title">トレーニングメニュー</td>
+          <td class="motion-title">時間</td>
+          <td class="motion-title">消費カロリー</td>
+        </tr>
+        <tr>
+        <th><%= f.label :run, "ランニング" %></th>
+        <td><%= f.number_field :run, placeholder: "時間を入力してください", class: 'form-number', id: 'run' %>分</td>
+        <td><div class="cal" id="run-cal">0</div>kcal</td>
+        </tr>
+      <tr>
+        <th><%= f.label :abs, "腹筋" %></th>
+        <td><%= f.number_field :abs, placeholder: "時間を入力してください", class: 'form-number', id: 'abs' %>分</td>
+        <td><div class="cal" id="abs-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th><%= f.label :squat, "スクワット" %></th>
+        <td><%= f.number_field :squat, placeholder: "時間を入力してください", class: 'form-number', id: 'squat' %>分</td>
+        <td><div class="cal" id="squat-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th><%= f.label :push_ups, "腕立て" %></th>
+        <td><%= f.number_field :push_ups, placeholder: "時間を入力してください", class: 'form-number', id: 'push-ups' %>分</td>
+        <td><div class="cal" id="push-ups-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th><%= f.label :spine, "背筋" %></th>
+        <td><%= f.number_field :spine, placeholder: "時間を入力してください", class: 'form-number', id: 'spine' %>分</td>
+        <td><div class="cal" id="spine-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th colspan="2">合計</th>
+        <td><div class="cal" id="total-cal">0</div>kcal</td>
+      </tr>
+      </table>
+      <%= f.submit "投稿", class: 'submit-btn' %>
+    </div>
+  </div>
+<% end %>

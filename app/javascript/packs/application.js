@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../index")
+require("../motion")
+require("../user_show")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -1,0 +1,34 @@
+<%= form_with(model: @motion, local: true) do |f| %>
+  <div class="motion-form">
+    <div class="motion-table">
+      <div class="hidden" id="weight"><%= @user.weight %></div>
+      <table>
+        <tr>
+          <td class="motion-title">トレーニングメニュー</td>
+          <td class="motion-title">時間</td>
+        </tr>
+        <tr>
+        <th><%= f.label :run, "ランニング" %></th>
+        <td><%= f.number_field :run, placeholder: "時間を入力してください", class: 'form-number', id: 'run' %>分</td>
+        </tr>
+      <tr>
+        <th><%= f.label :abs, "腹筋" %></th>
+        <td><%= f.number_field :abs, placeholder: "時間を入力してください", class: 'form-number', id: 'abs' %>分</td>
+      </tr>
+      <tr>
+        <th><%= f.label :squat, "スクワット" %></th>
+        <td><%= f.number_field :squat, placeholder: "時間を入力してください", class: 'form-number', id: 'squat' %>分</td>
+      </tr>
+      <tr>
+        <th><%= f.label :push_ups, "腕立て" %></th>
+        <td><%= f.number_field :push_ups, placeholder: "時間を入力してください", class: 'form-number', id: 'push-ups' %>分</td>
+      </tr>
+      <tr>
+        <th><%= f.label :spine, "背筋" %></th>
+        <td><%= f.number_field :spine, placeholder: "時間を入力してください", class: 'form-number', id: 'spine' %>分</td>
+      </tr>
+      </table>
+      <%= f.submit "修正完了", class: 'submit-btn' %>
+    </div>
+  </div>
+<% end %>

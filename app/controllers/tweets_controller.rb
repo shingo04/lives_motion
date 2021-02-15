@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @tweets = Tweet.includes(:user).order(id: "DESC").last(10)
+    @tweets = Tweet.includes(:user).order(id: "DESC").first(10)
     if user_signed_in?
       @user = User.find(current_user.id)
     end
@@ -20,6 +20,11 @@ class TweetsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @user = User.find(current_user.id)
+    @tweet = Tweet.find(params[:id])
   end
 
   private

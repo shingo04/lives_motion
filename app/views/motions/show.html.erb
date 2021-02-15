@@ -1,0 +1,52 @@
+<div class="motion-result">
+    <div class="user-motions">最新のトレーニング記録</div>
+    <span class="hidden" id="weight-user"><%= @user.weight %></span>
+    <table>
+      <tr> 
+        <td colspan="3"><%= l @motion.created_at %></td>
+      </tr>
+      <tr>
+        <td class="motion-title">トレーニングメニュー</td>
+        <td class="motion-title">時間</td>
+        <td class="motion-title">消費カロリー</td>
+      </tr>
+      <tr>
+        <th>ランニング</th>
+        <td><span id="run-user"><%= @motion.run %></span> 分</td>
+        <td><div class="user-cal" id="run-user-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th>腹筋</th>
+        <td><span id="abs-user"><%= @motion.abs %></span> 分</td>
+        <td><div class="user-cal" id="abs-user-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th>スクワット</th>
+        <td><span id="squat-user"><%= @motion.squat %></span> 分</td>
+        <td><div class="user-cal" id="squat-user-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th>腕立て</th>
+        <td><span id="push-ups-user"><%= @motion.push_ups %></span> 分</td>
+        <td><div class="user-cal" id="push-ups-user-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th>背筋</th>
+        <td><span id="spine-user"><%= @motion.spine %></span> 分</td>
+        <td><div class="user-cal" id="spine-user-cal">0</div>kcal</td>
+      </tr>
+      <tr>
+        <th colspan="2">合計</th>
+        <td><div class="user-cal" id="total-user-cal">0</div>kcal</td>
+      </tr>
+    </table>
+    <div class="edit-buttons">
+    <div class="edit-button">
+      <%= link_to "修正をする",  edit_motion_path(@motion), data: {"turbolinks"=>false} %>
+    </div>
+    <div class="edit-button">
+      <%= link_to "削除する",  motion_path(@motion), data: {"turbolinks"=>false}, method: :delete %>
+    </div>
+    </div>
+  </div>
+</div>

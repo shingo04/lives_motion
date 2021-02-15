@@ -36,43 +36,40 @@
     </div>
   </div>
   <div class="motion-result">
+    <div class="user-motions">最新のトレーニング記録</div>
+    <% @motions.each do |motion| %>
     <table>
+      <tr> 
+        <td colspan="2" class="create-motion"><%= l motion.created_at %></td>
+      </tr>
       <tr>
         <td class="motion-title">トレーニングメニュー</td>
-        <td class="motion-title">距離/回数</td>
-        <td class="motion-title">消費カロリー</td>
+        <td class="motion-title">時間</td>
       </tr>
       <tr>
         <th>ランニング</th>
-        <td>10km</td>
-        <td>1000kcal</td>
+        <td><span id="run-user"><%= motion.run %></span> 分</td>
       </tr>
       <tr>
         <th>腹筋</th>
-        <td>100回</td>
-        <td>1000kcal</td>
+        <td><span id="abs-user"><%= motion.abs %></span> 分</td>
       </tr>
       <tr>
         <th>スクワット</th>
-        <td>100回</td>
-        <td>1000kcal</td>
+        <td><span id="squat-user"><%= motion.squat %></span> 分</td>
       </tr>
       <tr>
         <th>腕立て</th>
-        <td>100回</td>
-        <td>1000kcal</td>
+        <td><span id="push-ups-user"><%= motion.push_ups %></span> 分</td>
       </tr>
       <tr>
         <th>背筋</th>
-        <td>100回</td>
-        <td>1000kcal</td>
-      </tr><tr>
-        <th colspan="2">合計</th>
-        <td>5000kcal</td>
+        <td><span id="spine-user"><%= motion.spine %></span> 分</td>
       </tr>
     </table>
     <div class="profile-button">
-      <%= link_to "トレーニングをする", edit_user_registration_path, data: {"turbolinks"=>false} %>
+      <%= link_to "詳細を見る",  motion_path(motion), data: {"turbolinks"=>false} %>
     </div>
+    <% end %>
   </div>
 </div>
