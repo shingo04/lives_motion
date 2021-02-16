@@ -6,7 +6,16 @@
       </tr>
       <tr>
         <th>ユーザー名</th>
-        <td><%= @user.nickname %></td>
+        <td class="users">
+          <div class="user-icon-show">
+            <% if @user.image? %>
+              <%= image_tag @user.image.url %>
+            <% else %>
+              <%= image_tag "/assets/default.png", :size => '80x80' %>
+            <% end %>
+          </div>
+          <%= @user.nickname %>
+        </td>
       </tr>
       <tr>
         <th>年齢</th>
@@ -36,7 +45,7 @@
     </div>
   </div>
   <div class="motion-result">
-    <div class="user-motions">最新のトレーニング記録</div>
+    <div class="user-motions"><%= "#{@user.nickname}さんのトレーニング記録" %></div>
     <% @motions.each do |motion| %>
     <table>
       <tr> 
@@ -71,5 +80,21 @@
       <%= link_to "詳細を見る",  motion_path(motion), data: {"turbolinks"=>false} %>
     </div>
     <% end %>
+  </div>
+  <div class="user-tweets">
+    <div class="user-motions"><%= "#{@user.nickname}さんのツイート" %></div>
+    <div class="contents">
+    <% @tweets.each do |tweet| %>
+      <div class="content">
+        <% if tweet.image.attached? %>
+        <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: 'image'), tweet_path(tweet) %>
+        <% end %>
+        <div class="text">
+          <%= link_to tweet.content, tweet_path(tweet) %>
+        </div>
+        <div class="create-time"><%= l tweet.created_at %></div>
+      </div>
+    <% end %>
+  </div>
   </div>
 </div>

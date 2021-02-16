@@ -1,6 +1,6 @@
 <div class="motion-result">
-    <div class="user-motions">最新のトレーニング記録</div>
-    <span class="hidden" id="weight-user"><%= @user.weight %></span>
+    <div class="user-motions">トレーニング記録</div>
+    <span class="hidden" id="weight-user"><%= current_user.weight %></span>
     <table>
       <tr> 
         <td colspan="3"><%= l @motion.created_at %></td>

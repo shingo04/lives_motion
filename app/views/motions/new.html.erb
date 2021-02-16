@@ -1,7 +1,7 @@
 <%= form_with(model: @motion, local: true) do |f| %>
   <div class="motion-form">
     <div class="motion-table">
-      <div class="hidden" id="weight"><%= @user.weight %></div>
+      <div class="hidden" id="weight"><%= current_user.weight %></div>
       <table>
         <tr>
           <td class="motion-title">トレーニングメニュー</td>

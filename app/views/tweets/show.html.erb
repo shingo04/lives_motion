@@ -4,9 +4,28 @@
     <div class="user-icon"></div>
     <%= link_to @tweet.user.nickname, user_path(@tweet.user.id), class: "user-name", data: {"turbolinks"=>false} %>
   </div>
-    <%= image_tag @tweet.image.variant(resize: '400x400'), class: 'image' if @tweet.image.attached? %>
-    <div class="text">
+    <%= image_tag @tweet.image.variant(resize: '500x500'), class: 'image' if @tweet.image.attached? %>
+    <div class="show-text">
       <%= @tweet.content %>
    </div>
+     <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+        <%= form.text_area :comment, placeholder: "コメントする", rows: "2", class: 'show-form' %>
+        <%= form.submit "SEND", class: 'show-submit' %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to "#{comment.user.nickname}　#{l comment.created_at}", user_path(comment.user.id) %></strong>
+          <div class="comment"><%= comment.comment %></div>
+        </p>
+      <% end %>
+    </div>
+  </div>
 </div>
 </div>

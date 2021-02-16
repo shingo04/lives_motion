@@ -30,7 +30,7 @@
         </div>
       </div>
       <% if user_signed_in? %>
-        <button class="btn-menu"><%= @user.nickname %></button>
+        <button class="btn-menu"><%= current_user.nickname %></button>
           <nav>
             <ul>
               <li><%= link_to "マイページ", user_path(current_user.id), data: {"turbolinks"=>false} %></li>
@@ -83,9 +83,6 @@
             <a href="#">ご利用ガイド</a>
             <a href="#">お問い合わせ</a>
           </ul>
-        </div>
-        <div class="company">
-          ©2021 LivesMotion CO.,LTD.All Rights Reserved.
         </div>
     </footer>
   </body>

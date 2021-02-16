@@ -1,7 +1,6 @@
 class MotionsController < ApplicationController
   def new
     @motion = Motion.new
-    @user = User.find(current_user.id)
   end
 
   def create
@@ -14,12 +13,10 @@ class MotionsController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user.id)
     @motion = Motion.find(params[:id])
   end
 
   def update
-    @user = User.find(current_user.id)
     @motion = Motion.find(params[:id])
     if @motion.update(motion_params)
       redirect_to user_path(current_user.id)
@@ -29,7 +26,6 @@ class MotionsController < ApplicationController
   end
 
   def show
-    @user = User.find(current_user.id)
     @motion = Motion.find(params[:id])
   end
 

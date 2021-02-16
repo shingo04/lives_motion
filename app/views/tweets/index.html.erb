@@ -4,13 +4,24 @@
     <% @tweets.each do |tweet| %>
       <div class="content">
         <div class="user">
-          <div class="user-icon"></div>
+          <%= link_to(user_path(tweet.user.id), data: {"turbolinks"=>false}) do %>
+            <div class="user-icon">
+              <% if tweet.user.image? %>
+                <%= image_tag tweet.user.image.url %>
+              <% else %>
+                <%= image_tag "/assets/default.png", :size => '50x50' %>
+              <% end %>
+            </div>
+          <% end %>
           <%= link_to tweet.user.nickname, user_path(tweet.user.id), class: "user-name", data: {"turbolinks"=>false} %>
         </div>
-        <%= image_tag tweet.image.variant(resize: '400x400'), class: 'image' if tweet.image.attached? %>
+        <% if tweet.image.attached? %>
+        <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: 'image'), tweet_path(tweet) %>
+        <% end %>
         <div class="text">
           <%= link_to tweet.content, tweet_path(tweet) %>
         </div>
+        <div class="create-time"><%= l tweet.created_at %></div>
       </div>
     <% end %>
   </div>

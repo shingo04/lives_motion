@@ -30,7 +30,7 @@
 | push_ups | integer    |                                |
 | spine    | integer    |                                |
 | total    | integer    | null: false                    |
-| spine    | references | null: false, foreign_key: true |
+| user     | references | null: false, foreign_key: true |
 
 ### Associations
 - belongs_to :user

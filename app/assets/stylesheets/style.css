@@ -232,10 +232,6 @@ footer {
   color: #305989;
 }
 
-.company {
-  background-color: #888888;
-}
-
 /* 一覧ページ */
 h1 {
   text-align: center;
@@ -246,7 +242,7 @@ h1 {
   border: #00aaff solid 5px;
   border-radius: 30px;
   padding: 20px;
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 
@@ -258,21 +254,16 @@ h1 {
 }
 
 .user-icon {
-  border: black 2px solid;
+  border: black 1px solid;
   border-radius: 50%;
   height: 55px;
   width: 55px;
+  overflow: hidden;
 }
 
 .user-name {
   color: #1b2024;
   font-size: 30px;
-}
-
-.text {
-  text-align: center;
-  font-size: 25px;
-  color: #1b2024;
 }
 
 .text a{
@@ -343,6 +334,22 @@ h1 {
 /* ユーザー詳細ページ */
 .user-show {
   padding: 35px;
+}
+
+.users {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-icon-show {
+  border: black 1px solid;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  margin-right: 50px;
 }
 
 table {
@@ -452,6 +459,10 @@ table td {
   border-radius: 30px;
 }
 
+.create-time {
+  text-align: right;
+}
+
 /* トレーニング入力ページ */
 
 .motion-form {
@@ -505,5 +516,62 @@ table td {
 /* ツイート詳細ページ */
 .show-content {
   height: 100vh;
-  margin-top: 100px;
+  overflow: scroll;
 }
+
+.show-text {
+  text-align: center;
+  font-size: 25px;
+  color: #1b2024;
+}
+
+.show-form {
+  width: 100%;
+  height: 100px;
+  margin-top: 30px;
+  outline: none;
+  border: #888888 2px solid;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.show-submit {
+  cursor: pointer;
+  outline: none;
+  border: 3px #7c7889 solid;
+  font-size: 30px;
+  border-radius: 40px;
+  background-color: #d4f0fd;
+  padding: 0 5rem;
+  margin: 20px 0 0 0;
+}
+
+.show-submit:hover {
+  background-color: #00aaff;
+}
+
+.comments {
+  font-size: 20px;
+  border-collapse: collapse;
+  word-break: break-all;
+}
+
+.comments a {
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+strong a {
+  text-align: left;
+  color: #00aaff;
+  background-color: #d4f0fd;
+}
+
+.comment {
+  text-align: left;
+  padding: 0 15px 15px 15px;
+  margin-bottom: 10px;
+  background-color: #d4f0fd;
+}
+

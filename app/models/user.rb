@@ -14,6 +14,9 @@ class User < ApplicationRecord
     end
   end
 
+  mount_uploader :image, ImageUploader
+
   has_many :tweets
   has_many :motions
+  has_many :comments
 end
