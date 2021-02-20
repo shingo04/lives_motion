@@ -24,6 +24,15 @@ class TweetsController < ApplicationController
     @comments = @tweet.comments.includes(:user)
   end
 
+  def destroy
+    @tweet = Tweet.find(params[:id])
+    if @tweet.destroy
+      redirect_to user_path(current_user.id)
+    else
+      render :show
+    end
+  end
+
   private
   def tweet_params
     params.require(:tweet).permit(:content, :image).merge(user_id: current_user.id)

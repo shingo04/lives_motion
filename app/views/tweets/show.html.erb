@@ -1,7 +1,15 @@
 <div class="show-content">
 <div class="content">
   <div class="user">
-    <div class="user-icon"></div>
+    <%= link_to(user_path(@tweet.user.id), data: {"turbolinks"=>false}) do %>
+      <div class="user-icon">
+        <% if @tweet.user.image? %>
+          <%= image_tag @tweet.user.image.url %>
+        <% else %>
+          <%= image_tag "/assets/default.png", :size => '50x50' %>
+        <% end %>
+      </div>
+    <% end %>
     <%= link_to @tweet.user.nickname, user_path(@tweet.user.id), class: "user-name", data: {"turbolinks"=>false} %>
   </div>
     <%= image_tag @tweet.image.variant(resize: '500x500'), class: 'image' if @tweet.image.attached? %>
@@ -21,7 +29,7 @@
       <h4>＜コメント一覧＞</h4>
       <% @comments.each do |comment| %>
         <p>
-          <strong><%= link_to "#{comment.user.nickname}　#{l comment.created_at}", user_path(comment.user.id) %></strong>
+          <strong><%= link_to "#{comment.user.nickname}　#{l comment.created_at}", user_path(comment.user.id), data: {"turbolinks"=>false} %></strong>
           <div class="comment"><%= comment.comment %></div>
         </p>
       <% end %>

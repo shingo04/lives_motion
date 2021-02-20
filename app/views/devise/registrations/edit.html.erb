@@ -1,49 +1,47 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<div class="sign-up">
+<div class="sign-up-title">ユーザー情報編集</div>
 <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 <%= render "devise/shared/error_messages" %>
 
   <div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image, class:"form-cont・・" %>
+    <%= f.label :email, "メールアドレス", class: "sign-up-text" %><span class="must"> ※</span><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'sign-up-form' %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :nickname, "ニックネーム", class: "sign-up-text" %><span class="must"> ※</span><br />
+    <%= f.text_field :nickname, class: 'sign-up-form' %>
   </div>
 
   <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname %>
+    <%= f.label :gender_id, "性別", class: "sign-up-text" %><span class="must"> ※</span><br />
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"gender-select"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.text_field :age %>
+    <%= f.label :age, "年齢", class: "sign-up-text" %><span class="must"> ※</span><br />
+    <%= f.text_field :age, class: 'sign-up-form' %>
   </div>
 
   <div class="field">
-    <%= f.label :height %><br />
-    <%= f.text_field :height %>
+    <%= f.label :height, "身長", class: "sign-up-text" %><span class="must"> ※</span><br />
+    <%= f.text_field :height, class: 'sign-up-form' %>
   </div>
 
   <div class="field">
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
+    <%= f.label :weight, "体重", class: "sign-up-text" %><span class="must"> ※</span><br />
+    <%= f.text_field :weight, class: 'sign-up-form' %>
   </div>
 
   <div class="field">
-    <%= f.label :bmr %><br />
-    <%= f.text_field :bmr %>
-  </div>
-
-  <div class="field">
-    <%= f.label :introduction %><br />
-    <%= f.text_area :introduction %>
+    <%= f.label :introduction, "自己紹介", class: "sign-up-text" %><br />
+    <%= f.text_area :introduction, class: 'sign-up-introduction' %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Edit" %>
+    <%= f.submit "編集完了", class: "sign-up-submit" %>
   </div>
 <% end %>
+  <%= link_to "アカウントを削除する", user_registration_path, method: :delete, data: { confirm: 'ユーザー情報を削除してもよろしいですか？' } %>
+</div>
+

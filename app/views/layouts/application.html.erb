@@ -9,81 +9,83 @@
   </head>
 
   <body>
-    <header>
-      <div class="app-name">
-        <%= link_to "LivesMotion", root_path, data: {"turbolinks"=>false} %>
-      </div>
-      <div class="descriptions" id="descriptions">
-        <div class="use">
-          <button id="use">LivesMotionとは？</button>
+    <div class="contents-color">
+      <header>
+        <div class="app-name">
+          <%= link_to "LivesMotion", root_path, data: {"turbolinks"=>false} %>
         </div>
-        <div class="description" id="description">
-          こんにちは
+        <div class="descriptions" id="descriptions">
+          <div class="use">
+            <button id="use">LivesMotionとは？</button>
+          </div>
+          <div class="description" id="description">
+            こんにちは
+          </div>
         </div>
-      </div>
-      <div class="how-to-use" id="how-to-use">
-        <div class="how">
-          <button id="how">LivesMotionの使い方</button>
+        <div class="how-to-use" id="how-to-use">
+          <div class="how">
+            <button id="how">LivesMotionの使い方</button>
+          </div>
+          <div class="how-to" id="how-to">
+            おはよう
+          </div>
         </div>
-        <div class="how-to" id="how-to">
-          おはよう
-        </div>
-      </div>
-      <% if user_signed_in? %>
-        <button class="btn-menu"><%= current_user.nickname %></button>
-          <nav>
+        <% if user_signed_in? %>
+          <button class="btn-menu"><%= current_user.nickname %></button>
+            <nav>
+              <ul>
+                <li><%= link_to "マイページ", user_path(current_user.id), data: {"turbolinks"=>false} %></li>
+                <li><%= link_to "新規投稿", new_tweet_path, data: {"turbolinks"=>false} %></li>
+                <li><%= link_to "Motions", new_motion_path, data: {"turbolinks"=>false} %></li>
+                <li class="log-out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks"=>false} %></li>
+              </ul>
+            </nav>
+        <% else %>
+          <div class="user-menu">
+            <div class="user-left">
+              <%= link_to "ログイン", new_user_session_path, data: {"turbolinks"=>false} %>
+            </div>
+            <div class="user-right">
+              <%= link_to "新規登録", new_user_registration_path, data: {"turbolinks"=>false} %>
+            </div>
+          </div>
+        <% end %>
+      </header>
+      <%= yield %>
+      <footer>
+        <div class="footer-menu">
+          <div class="details">
+            <h3>LivesMotionについて</h3>
             <ul>
-              <li><%= link_to "マイページ", user_path(current_user.id), data: {"turbolinks"=>false} %></li>
-              <li><%= link_to "新規投稿", new_tweet_path, data: {"turbolinks"=>false} %></li>
-              <li><%= link_to "Motions", new_motion_path, data: {"turbolinks"=>false} %></li>
-              <li class="log-out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks"=>false} %></li>
+              <li><a href="#">会社概要（運営会社)</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+              <li><a href="#">LivesMotion利用規約</a></li>
             </ul>
-          </nav>
-      <% else %>
-        <div class="user-menu">
-          <div class="user-left">
-            <%= link_to "ログイン", new_user_session_path %>
           </div>
-          <div class="user-right">
-            <%= link_to "新規登録", new_user_registration_path %>
+          <div class="community">
+            <h3>コミュニティ一覧</h3>
+            <ul>
+              <li><a href="#">公式ブログ</a></li>
+              <li><a href="#">Training Report</a></li>
+              <li><a href="#">運営からのお知らせ</a></li>
+            </ul>
+          </div>
+          <div class="help">
+            <h3>ヘルプ＆ガイド</h3>
+            <ul>
+              <li><a href="#">LivesMotionアシスタント</a></li>
+              <li><a href="#">コンテンツと端末の管理</a></li>
+              <li><a href="#">ヘルプ</a></li>
+            </ul>
           </div>
         </div>
-      <% end %>
-    </header>
-    <%= yield %>
-    <footer>
-      <div class="footer-menu">
-        <div class="details">
-          <h3>LivesMotionについて</h3>
-          <ul>
-            <li><a href="#">会社概要（運営会社)</a></li>
-            <li><a href="#">プライバシーポリシー</a></li>
-            <li><a href="#">LivesMotion利用規約</a></li>
-          </ul>
-        </div>
-        <div class="community">
-          <h3>コミュニティ一覧</h3>
-          <ul>
-            <li><a href="#">公式ブログ</a></li>
-            <li><a href="#">Training Report</a></li>
-            <li><a href="#">運営からのお知らせ</a></li>
-          </ul>
-        </div>
-        <div class="help">
-          <h3>ヘルプ＆ガイド</h3>
-          <ul>
-            <li><a href="#">LivesMotionアシスタント</a></li>
-            <li><a href="#">コンテンツと端末の管理</a></li>
-            <li><a href="#">ヘルプ</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="contact-us">
-            <%= link_to "マイページ", "#", data: {"turbolinks"=>false} %>
-            <a href="#">ご利用ガイド</a>
-            <a href="#">お問い合わせ</a>
-          </ul>
-        </div>
-    </footer>
+        <div class="contact-us">
+              <%= link_to "マイページ", "#", data: {"turbolinks"=>false} %>
+              <a href="#">ご利用ガイド</a>
+              <a href="#">お問い合わせ</a>
+            </ul>
+          </div>
+      </footer>
+    </div>
   </body>
 </html>

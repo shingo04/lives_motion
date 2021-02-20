@@ -5,96 +5,183 @@
         <td colspan="2" class="profile-title">プロフィール</td>
       </tr>
       <tr>
-        <th>ユーザー名</th>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <th>ユーザー名</th>
+        <% else %>
+          <th class="users-name">ユーザー名</th>
+        <% end %>
         <td class="users">
-          <div class="user-icon-show">
+          <div class="user-icon-show" id="user-icon">
             <% if @user.image? %>
               <%= image_tag @user.image.url %>
             <% else %>
               <%= image_tag "/assets/default.png", :size => '80x80' %>
             <% end %>
           </div>
+          <% if user_signed_in? && current_user.id == @user.id %>
+            <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+              <div class="user-icon-edit" id="user-icon-edit">
+                <div class="field">
+                  <%= f.label :image, "アイコンを選択してください" %><br />
+                  <%= f.file_field :image, class:"form-cont・・", id: 'preview' %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "内容を保存", class: "user-icon-submit" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
           <%= @user.nickname %>
         </td>
       </tr>
-      <tr>
-        <th>年齢</th>
-        <td><%= @user.age %>歳</td>
-      </tr>
-      <tr>
-        <th>身長</th>
-        <td><%= @user.height %>cm</td>
-      </tr>
-      <tr>
-        <th>体重</th>
-        <td><%= @user.weight %>kg</td>
-      </tr>
-      <tr>
-        <th>基礎代謝</th>
-        <td><%= @user.bmr %>kcal</td>
-      </tr>
-      <tr>
-        <td colspan="2" class="introduce">自己紹介</td>
-      </tr>
-      <tr>
-        <td colspan="2" class="introduce-content"><%= @user.introduction %></td>
-      </tr>
-    </table>
-    <div class="profile-button">
-      <%= link_to "ユーザー情報を編集する", edit_user_registration_path, data: {"turbolinks"=>false} %>
-    </div>
-  </div>
-  <div class="motion-result">
-    <div class="user-motions"><%= "#{@user.nickname}さんのトレーニング記録" %></div>
-    <% @motions.each do |motion| %>
-    <table>
-      <tr> 
-        <td colspan="2" class="create-motion"><%= l motion.created_at %></td>
-      </tr>
-      <tr>
-        <td class="motion-title">トレーニングメニュー</td>
-        <td class="motion-title">時間</td>
-      </tr>
-      <tr>
-        <th>ランニング</th>
-        <td><span id="run-user"><%= motion.run %></span> 分</td>
-      </tr>
-      <tr>
-        <th>腹筋</th>
-        <td><span id="abs-user"><%= motion.abs %></span> 分</td>
-      </tr>
-      <tr>
-        <th>スクワット</th>
-        <td><span id="squat-user"><%= motion.squat %></span> 分</td>
-      </tr>
-      <tr>
-        <th>腕立て</th>
-        <td><span id="push-ups-user"><%= motion.push_ups %></span> 分</td>
-      </tr>
-      <tr>
-        <th>背筋</th>
-        <td><span id="spine-user"><%= motion.spine %></span> 分</td>
-      </tr>
-    </table>
-    <div class="profile-button">
-      <%= link_to "詳細を見る",  motion_path(motion), data: {"turbolinks"=>false} %>
-    </div>
-    <% end %>
-  </div>
-  <div class="user-tweets">
-    <div class="user-motions"><%= "#{@user.nickname}さんのツイート" %></div>
-    <div class="contents">
-    <% @tweets.each do |tweet| %>
-      <div class="content">
-        <% if tweet.image.attached? %>
-        <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: 'image'), tweet_path(tweet) %>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <tr>
+            <th>年齢</th>
+            <td><span id="age"><%= @user.age %></span>歳</td>
+          </tr>
+          <tr>
+            <th>性別</th>
+            <td><span class="hidden" id="gender"><%= @user.gender.id %></span><%= @user.gender.name %></td>
+          </tr>
+          <tr>
+            <th>身長</th>
+            <td><span id="height"><%= @user.height %></span>cm</td>
+          </tr>
+          <tr>
+            <th>体重</th>
+            <td><span id="weight"><%= @user.weight %></span>kg</td>
+          </tr>
+          <tr>
+            <th>基礎代謝</th>
+            <td><span id="bmr"><%=  %></span>kcal</td>
+          </tr>
         <% end %>
-        <div class="text">
-          <%= link_to tweet.content, tweet_path(tweet) %>
-        </div>
-        <div class="create-time"><%= l tweet.created_at %></div>
+        <tr>
+          <td colspan="2" class="introduce">自己紹介</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="introduce-content"><%= @user.introduction %></td>
+        </tr>
+    </table>
+    <% if user_signed_in? && current_user.id == @user.id %>
+      <div class="profile-button">
+        <%= link_to "ユーザー情報を編集する", edit_user_registration_path, data: {"turbolinks"=>false} %>
       </div>
     <% end %>
   </div>
+  <div class="motion-tweet">
+    <% if user_signed_in? && current_user.id == @user.id %>
+      <div class="my-user-motions">
+        <div class="user-motions">
+          <%= "#{@user.nickname}さんのトレーニング記録" %>
+        </div>
+        <% if @tweets.present? %>
+          <div class="motion-result">
+            <% @motions.each do |motion| %>
+              <table>
+                <tr> 
+                  <td colspan="2" class="create-motion"><%= l motion.created_at %></td>
+                </tr>
+                <tr>
+                  <td class="motion-title">トレーニングメニュー</td>
+                  <td class="motion-title">時間</td>
+                </tr>
+                <tr>
+                  <th>ランニング</th>
+                  <td><span id="run-user"><%= motion.run %></span> 分</td>
+                </tr>
+                <tr>
+                  <th>腹筋</th>
+                  <td><span id="abs-user"><%= motion.abs %></span> 分</td>
+                </tr>
+                <tr>
+                  <th>スクワット</th>
+                  <td><span id="squat-user"><%= motion.squat %></span> 分</td>
+                </tr>
+                <tr>
+                  <th>腕立て</th>
+                  <td><span id="push-ups-user"><%= motion.push_ups %></span> 分</td>
+                </tr>
+                <tr>
+                  <th>背筋</th>
+                  <td><span id="spine-user"><%= motion.spine %></span> 分</td>
+                </tr>
+              </table>
+              <div class="profile-button">
+                <%= link_to "詳細を見る",  motion_path(motion), data: {"turbolinks"=>false} %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="no-tweets">
+            記録がありません<br>体を動かしましょう！
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if user_signed_in? && current_user.id == @user.id %>
+      <div class="my-user-tweets">
+        <div class="user-motions">
+          <%= "#{@user.nickname}さんのツイート" %>
+        </div>
+        <% if @tweets.present? %>
+          <div class="my-user-contents">
+            <% @tweets.each do |tweet| %>
+              <div class="my-user-content">
+                <% if tweet.image.attached? %>
+                  <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: 'image', data: {"turbolinks"=>false}), tweet_path(tweet) %>
+                <% end %>
+                <div class="text">
+                  <%= link_to tweet.content, tweet_path(tweet), data: {"turbolinks"=>false} %>
+                </div>
+                <div class="create-time">
+                  <%= l tweet.created_at %>
+                </div>
+                <div class="delete-button">
+                  <%= link_to "削除する",  tweet_path(tweet), data: {"turbolinks"=>false}, method: :delete %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="no-tweets">
+            ツイートがありません<br>ツイートをして状況を共有しよう！
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="user-tweets">
+        <div class="user-motions">
+          <%= "#{@user.nickname}さんのツイート" %>
+        </div>
+        <% if @tweets.present? %>
+          <div class="contents">
+            <% @tweets.each do |tweet| %>
+              <div class="content">
+                <% if tweet.image.attached? %>
+                  <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: 'image', data: {"turbolinks"=>false}), tweet_path(tweet) %>
+                <% end %>
+                <div class="text">
+                  <%= link_to tweet.content, tweet_path(tweet), data: {"turbolinks"=>false} %>
+                </div>
+                <div class="create-time">
+                  <%= l tweet.created_at %>
+                </div>
+                <% if user_signed_in? && current_user.id == @user.id %>
+                  <div class="delete-button">
+                    <%= link_to "削除する",  tweet_path(tweet), data: {"turbolinks"=>false}, method: :delete %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="no-tweets">
+            <%= "#{@user.nickname}さんはまだツイートをしていません" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

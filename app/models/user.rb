@@ -10,13 +10,16 @@ class User < ApplicationRecord
       validates :age
       validates :height
       validates :weight
-      validates :bmr
     end
   end
+  validates :gender_id, numericality: { other_than: 0 } 
 
   mount_uploader :image, ImageUploader
 
-  has_many :tweets
-  has_many :motions
-  has_many :comments
+  has_many :tweets, dependent: :destroy
+  has_many :motions, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :gender
 end

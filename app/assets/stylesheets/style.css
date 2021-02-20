@@ -34,6 +34,11 @@ a {
   color: #3b4043;
 }
 
+/* 共通 */
+.contents-color {
+  background-color: #d4f0fd;
+}
+
 /* ヘッダー */
 header {
   display: flex;
@@ -233,6 +238,11 @@ footer {
 }
 
 /* 一覧ページ */
+.contents {
+  height: calc(100vh - 60px);
+  overflow: scroll;
+}
+
 h1 {
   text-align: center;
 }
@@ -241,9 +251,10 @@ h1 {
   margin: 20px auto;
   border: #00aaff solid 5px;
   border-radius: 30px;
-  padding: 20px;
-  width: 60%;
+  padding: 0 20px 20px 20px;
+  width: 50%;
   text-align: center;
+  background-color: #ffffff;
 }
 
 .user {
@@ -286,6 +297,7 @@ h1 {
   margin: 0 auto;
   border: lightblue 10px solid;
   border-radius: 12px;
+  background-color: #ffffff;
 }
 
 .content-title {
@@ -334,9 +346,16 @@ h1 {
 /* ユーザー詳細ページ */
 .user-show {
   padding: 35px;
+  height: calc(100vh - 60px);
+  overflow: scroll;
+}
+
+.users-name {
+  width: 40%;
 }
 
 .users {
+  position: relative;
   width: auto;
   display: flex;
   justify-content: center;
@@ -352,6 +371,39 @@ h1 {
   margin-right: 50px;
 }
 
+.user-icon-show:hover {
+  border: #0000FF 2px solid;
+}
+
+.user-icon-edit {
+  position: absolute;
+  background-color: #ffffff;
+  top: 100px;
+  left: 90px;
+  height: 0px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.open-user-icon-edit {
+  height: 150px;
+}
+
+.user-icon-submit {
+  width: 100px;
+  height: 40px;
+  background-color: #FF3333;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+
+.user-icon-submit:hover {
+  background-color: #CC3333;
+}
+
 table {
   width: 70%;
   margin: 0 auto;
@@ -359,10 +411,22 @@ table {
   word-break: break-all;
 }
 
+.motion-tweet {
+  display: flex;
+  justify-content: space-around;
+}
+
+.motion-result {
+  height: 70vh;
+  width: 50vw;
+  overflow: scroll;
+  margin-top: 50px;
+}
+
 .user-motions {
   text-align: center;
   font-size: 30px;
-  margin-bottom: 20px;
+  margin: 50px 0 20px;
 }
 
 .profile-title {
@@ -457,10 +521,135 @@ table td {
   padding: 10px 20px;
   border: blueviolet 3px solid;
   border-radius: 30px;
+  font-size: 16px;
+}
+
+.delete-button a {
+  text-align: center;
+  width: 40%;
+  color: #1b2024;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: blueviolet 3px solid;
+  border-radius: 30px;
 }
 
 .create-time {
   text-align: right;
+}
+
+.my-user-contents {
+  width: 40vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.my-user-content {
+  margin: 20px auto;
+  border: #00aaff solid 5px;
+  border-radius: 30px;
+  padding: 0 20px 20px 20px;
+  width: 90%;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.user-tweets {
+  width: 100%;
+}
+
+.no-tweets {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 100px;
+  height: 300px;
+}
+
+/* ユーザー登録画面 */
+.sign-up {
+  width: 50%;
+  margin: 50px auto;
+  background-color: #ffffff;
+}
+
+.sign-up-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.field {
+  margin: 20px auto;
+  width: 300px;
+}
+
+.sign-up-form {
+  width: 300px;
+  height: 40px;
+  border: #888888 1px solid;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.sign-up-text {
+  font-size: 16px;
+  font-weight: bolder;
+  margin-left: 0;
+}
+
+.must {
+  font-size: 16px;
+  font-weight: bolder;
+  color: red;
+}
+
+.gender-select {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.sign-up-introduction {
+  width: 300px;
+  height: 200px;
+  border: #888888 1px solid;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.actions {
+  text-align: center;
+}
+
+.sign-up-submit {
+  width: 300px;
+  height: 40px;
+  background-color: #FF3333;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+
+.sign-up-submit:hover {
+  background-color: #CC3333;
+}
+
+.sign-up-link a{
+  width: 300px;
+  height: 40px;
+  margin: 50px auto 0;
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #00aaff;
+}
+
+.sign-up-link a:hover {
+  background-color: #305989;
 }
 
 /* トレーニング入力ページ */

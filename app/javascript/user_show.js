@@ -10,8 +10,8 @@ function user_show() {
   const pushUpsUserCal = document.getElementById('push-ups-user-cal');
   const spineUser = document.getElementById('spine-user').innerText;
   const spineUserCal = document.getElementById('spine-user-cal');
-  const totalUserCal = document.getElementById('total-user-cal')
-
+  const totalUserCal = document.getElementById('total-user-cal');
+  
   runUserCal.innerHTML = parseInt((runUser / 60 * weightUser * 9 * 1.05), 10)
   absUserCal.innerHTML = parseInt((absUser / 60 * weightUser * 3.5 * 1.05), 10)
   squatUserCal.innerHTML = parseInt((squatUser / 60 * weightUser * 3.5 * 1.05), 10)
