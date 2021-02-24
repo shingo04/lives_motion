@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LivesMotion</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+    </style>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -14,29 +18,24 @@
         <div class="app-name">
           <%= link_to "LivesMotion", root_path, data: {"turbolinks"=>false} %>
         </div>
-        <div class="descriptions" id="descriptions">
-          <div class="use">
-            <button id="use">LivesMotionとは？</button>
-          </div>
-          <div class="description" id="description">
-            こんにちは
-          </div>
-        </div>
-        <div class="how-to-use" id="how-to-use">
-          <div class="how">
-            <button id="how">LivesMotionの使い方</button>
-          </div>
-          <div class="how-to" id="how-to">
-            おはよう
-          </div>
-        </div>
         <% if user_signed_in? %>
-          <button class="btn-menu"><%= current_user.nickname %></button>
+          <button class="btn-menu">
+            <div class="user-btn">
+              <div class="user-icon-btn">
+                <% if current_user.image? %>
+                  <%= image_tag current_user.image.url, class: "header-user-icon" %>
+                <% else %>
+                  <%= image_tag "/assets/default.png", class: "header-user-icon" %>
+                <% end %>
+              </div>
+              <%= current_user.nickname %>
+            </div>
+          </button>
             <nav>
               <ul>
                 <li><%= link_to "マイページ", user_path(current_user.id), data: {"turbolinks"=>false} %></li>
-                <li><%= link_to "新規投稿", new_tweet_path, data: {"turbolinks"=>false} %></li>
-                <li><%= link_to "Motions", new_motion_path, data: {"turbolinks"=>false} %></li>
+                <li><%= link_to "ツイート", new_tweet_path, data: {"turbolinks"=>false} %></li>
+                <li><%= link_to "トレーニング", new_motion_path, data: {"turbolinks"=>false} %></li>
                 <li class="log-out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks"=>false} %></li>
               </ul>
             </nav>

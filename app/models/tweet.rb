@@ -8,4 +8,12 @@ class Tweet < ApplicationRecord
   def was_attached?
     self.image.attached?
   end
+
+  def self.search(search)
+    if search != ""
+      Tweet.where('content LIKE(?)', "%#{search}%")
+    else
+      Tweet.includes(:user).order(id: "DESC").first(10)
+    end
+  end
 end

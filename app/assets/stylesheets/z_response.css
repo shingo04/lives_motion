@@ -1,0 +1,554 @@
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+  .description {
+    width: 100vw;
+    background-position: 50% 40%;
+  }
+
+  nav.open-menu {
+    width: 25%;
+  }
+
+  .contents {
+    min-height: 63vh;
+  }
+
+  .content {
+    width: 70%;
+  }
+
+  .content-form {
+    width: 80%;
+    padding: 20px;
+  }
+  
+
+  .new-form {
+    height: 71vh;
+    padding: 160px 0;
+  }
+
+  .form-image {
+    padding: 10px 35px;
+  }
+
+  .image-content {
+    padding-right: 20px;
+  }
+
+  .motion-title {
+    font-size: 17px;
+    font-weight: bolder;
+  }
+
+  .create-time {
+    font-size: 15px;
+  }
+
+  .motion-form {
+    min-height: 56vh;
+  }
+
+  .motion-table {
+    margin: 200px auto;
+  }
+  
+  .response {
+    height: 54vh;
+  }
+
+  .sign-in {
+    margin: 230px auto;
+  }
+
+  .edit-buttons {
+    margin: 10px auto 50px;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .user-cal {
+    font-size: 16px;
+  }
+
+  .motion-result-show {
+    min-height: 71vh;
+    padding: 100px 0;
+  }
+
+}
+
+/* スマートフォン表示時 */
+@media (max-width: 375px) {
+  header {
+    height: 60px;
+    padding: 0;
+  }
+
+  header::after {
+    height: 60px;
+  }
+
+  .app-name a{
+    font-size: 20px;
+  }
+
+  .user-left a {
+    font-size: 15px;
+    margin-right: 15px;
+    padding: 3px;
+  }
+  
+  .user-right a {
+    font-size: 15px;
+    padding: 3px;
+    margin-right: 8px;
+  }
+
+  .response {
+    height: 69vh;
+  }
+
+  .sign-in {
+    width: 90%;
+    height: 350px;
+    margin: 70px auto 0;
+  }
+
+  .sign-up-link a{
+    width: 300px;
+    height: 30px;
+    margin: 20px auto 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-icon-btn {
+    height: 35px;
+    width: 35px;
+  }
+
+  .btn-menu {
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  .btn-menu::after {
+    bottom: 2px;
+  }
+
+  a {
+    padding: 10px;
+  }
+
+  nav {
+    top: 60px;
+    font-size: 12px;
+  }
+
+  nav.open-menu {
+    width: 30%;
+  }
+
+  .footer-menu {
+    padding: 0 2px;
+    height: 70px;
+  }
+
+  .footer-menu h3 {
+    font-size: 2px;
+  }
+
+  .footer-menu li a {
+    font-size: 2px;
+    padding: 3px 0;
+  }
+
+  .contact-us a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 10px;
+    height: 30px;
+  }
+
+  .search-input {
+    width: 200px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .search-btn {
+    height: 20px;
+    width: 50px;
+    font-size: 10px;
+  }
+
+  .content {
+    margin: 20px auto;
+    border: #00aaff solid 5px;
+    border-radius: 30px;
+    padding: 0 10px 10px 10px;
+    width: 80vw;
+  }  
+
+  .user {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: solid 2px #00aaff;
+    margin-bottom: 20px;
+  }
+  
+  .user-icon {
+    height: 35px;
+    width: 35px;
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+  .text a{
+    text-align: center;
+    font-size: 16px;
+    color: #1b2024;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .no-search {
+    text-align: center;
+    font-size: 16px;
+    padding-top: 150px;
+  }
+
+  .profile {
+    width: 100vw;
+    margin: 0 auto;
+  }
+
+  .profile table {
+    margin: 0 auto;
+    width: 90vw;
+  }
+
+  .profile-title {
+    padding: 5px 0;
+    font-size: 18px;
+  }
+
+  table th {
+    width: 30%;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  table td {
+    width: 40%;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .user-icon-show {
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+  }
+
+  .user-icon-motion {
+    width: auto;
+    height: 100%;
+  }
+
+  .introduce {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .introduce-content {
+    padding: 10px 5px;
+  }
+
+  .profile-button a {
+    width: 170px;
+    padding: 10px 0;
+    font-size: 12px;
+  }
+
+  .motion-result {
+    height: 52vh;
+    width: 100vw;
+    overflow: scroll;
+    margin-top: 50px;
+  }
+
+  .motion-result table {
+    width: 90%;
+  }
+
+  .create-motion {
+    font-size: 16px;
+  }
+
+  .motion-title {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .motion-tweet {
+    display: block;
+  }
+
+  .my-user-contents {
+    width: 90vw;
+    height: 50vh;
+    margin: 0 auto;
+  }
+
+  .create-time {
+    font-size: 10px;
+  }
+
+  .user-icon-edit {
+    top: 54px;
+    left: -100px;
+    z-index: 1;
+  }
+
+  .open-user-icon-edit {
+    height: 150px;
+  }
+
+  .delete-button a {
+    margin: 10px auto 0;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .sign-up {
+    width: 85%;
+    margin: 30px auto;
+  }
+
+  .sign-up-title {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+
+  .sign-up-text {
+    font-size: 12px;
+  }
+
+  .sign-up-form {
+    width: 300px;
+    height: 25px;
+    font-size: 13px;
+  }
+
+  .gender-select {
+    width: 100px;
+    height: 25px;
+    font-size: 13px;
+  }
+
+  .sign-up-introduction {
+    height: 100px;
+    font-size: 13px;
+  }
+
+  .sign-up-submit {
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .delete-user a{
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .motion-result-show {
+    height: 78vh;
+    padding: 40px 0;
+  }
+
+  .user-motions {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .motion-result-show table {
+    width: 95vw;
+    margin-top: 20px;
+  }
+
+  .motion-result-show .motion-title {
+    font-size: 5px;
+    height: 10px;
+    width: auto;
+  }
+
+  .motion-result-show th {
+    font-size: 15px;
+    height: 15px;
+    width: 32%;
+    padding: 2px;
+  }
+
+  .motion-result-show td {
+    font-size: 10px;
+    padding: 5px;
+    width: 40%;
+  }
+
+  .motion-result-show .user-cal {
+    font-size: 8px;
+    margin-top: 10px;
+  }
+
+  .edit-button a {
+    padding: 5px 30px;
+    margin: 5px;
+    font-size: 10px;
+  }
+
+  .motion-form {
+    min-height: 75vh;
+    padding: 0;
+  }
+
+  .motion-table {
+    margin: 50px auto;
+    padding: 2px;
+  }
+
+  .motion-table table {
+    width: 95vw;
+  }
+
+  .motion-table .motion-title {
+    font-size: 5px;
+    padding: 5px;
+    width: 20%;
+  }
+
+  .motion-table th {
+    font-size: 15px;
+    height: 15px;
+    width: 32%;
+    padding: 2px;
+  }
+
+  .motion-table td {
+    font-size: 10px;
+    padding: 5px;
+    width: 40%;
+  }
+
+  .motion-table .cal {
+    font-size: 8px;
+    height: 18px;
+  }
+
+  .form-number {
+    height: 18px;
+    width: 60%;
+    font-size: 8px;
+  }
+
+  .submit-btn {
+    font-size: 18px;
+    border: 2px #7c7889 solid;
+    padding: 0 5rem;
+  }
+
+  .show-content {
+    min-height: 76vh;
+  }
+
+  .show-text {
+    font-size: 18px;
+  }
+
+  .show-form {
+    width: 100%;
+    height: 70px;
+    margin-top: 30px;
+    outline: none;
+    border: #888888 2px solid;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .show-submit {
+    border: 2px #7c7889 solid;
+    font-size: 18px;
+    padding: 0 6rem;
+    margin: 10px 0 0 0;
+  }
+
+  .comments {
+    font-size: 15px;
+    border-collapse: collapse;
+    word-break: break-all;
+  }
+
+  .comments a {
+    font-size: 11px;
+    margin: 0 auto;
+    padding-top: 16px;
+  }
+
+  .comment-delete a {
+    color: red;
+    position: absolute;
+    right: 10px;
+    top: -44px;
+    padding: 4px;
+    font-size: 8px;
+  }
+
+  .new-form {
+    text-align: center;
+    height: 78vh;
+    padding: 60px 0;
+  }
+
+  .content-title {
+    font-size: 18px;
+  }
+  
+  .content-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .content-text {
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    border: #7c7889 solid 2px;
+    font-size: 15px;
+  }
+
+  .form-image {
+    border: none;
+    padding: 0px 10px;
+  }
+
+  .image-content {
+    font-size: 15px;
+    padding: 10px;
+  }
+  
+}

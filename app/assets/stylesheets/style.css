@@ -36,7 +36,7 @@ a {
 
 /* 共通 */
 .contents-color {
-  background-color: #d4f0fd;
+  background-color: #AAFFFF	;
 }
 
 /* ヘッダー */
@@ -44,102 +44,54 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 120px;
   width: 100vw;
-  background-color:  #00aaff;
+  background-image: url('/assets/images/header.jpg');
+  background-position: 0 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 20px;
-  position: sticky;
+}
+
+header::after {
+  content: '';
+  background-color: rgba(0,0,0,0.2);
+  position: absolute;
+  left: 0;
+  right: 0;
   top: 0;
+  bottom: 0;
+  height: 120px;
+}
+
+.app-name {
   z-index: 1;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.app-name::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 5px;
+  background: #99FF33;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .3s;
+}
+
+.app-name:hover::after {
+  transform: scale(1, 1);
 }
 
 .app-name a{
+  font-family: 'Righteous', cursive;
   font-size: 40px;
   padding: 0 10px;
-}
-
-.descriptions {
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 20px;
-  line-height: 1;
-  border-bottom: transparent 10px solid;
-}
-
-.how-to-use {
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 1;
-  border-bottom: transparent 10px solid;
-}
-
-.use {
-  height: 50px;
-}
-
-.use button {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 25px;
-  padding: 18px 10px;
-  cursor: pointer;
-  line-height: 1;
-  border-bottom: transparent 10px solid;
-}
-
-.how {
-  height: 50px;
-}
-
-.how button {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  color: #ffffff;
-  font-size: 25px;
-  padding: 18px 10px;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.description {
-  color: violet;
-  width: 100%;
-  background-color: #d4f0fd;
-  position: absolute;
-  z-index: 1;
-  top: 60px;
-  overflow-x: hidden;
-  left: 0;
-  text-align: center;
-  height: 0;
-  transition: .5s;
-}
-
-.description.open-menu{
-  height: calc(100vh - 60px);
-}
-
-.how-to {
-  color: blue;
-  width: 100%;
-  background-color: #d4f0fd;
-  position: absolute;
-  z-index: 1;
-  top: 60px;
-  overflow-x: hidden;
-  left: 0;
-  text-align: center;
-  height: 0;
-  transition: .5s;
-}
-
-.how-to.open-menu{
-  height: calc(100vh - 60px);
 }
 
 a {
@@ -151,25 +103,65 @@ a {
 }
 
 .btn-menu {
-  border: 1px solid #ffffff;
+  border: none;
+  outline: none;
   background-color: transparent;
   color: #ffffff;
   padding: .5rem 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
   line-height: 1;
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-menu::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 5px;
+  background: #99FF33;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .3s;
+}
+
+.btn-menu:hover::after {
+  transform: scale(1, 1);
+}
+
+.user-btn {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon-btn {
+  border: black 1px solid;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.header-user-icon {
+  width: auto;
+  height: 100%;
 }
 
 nav {
   background-color: black;
   position: absolute;
   z-index: 3;
-  top: 60px;
+  top: 120px;
   right: 0;
   overflow-x: hidden;
   text-align: center;
   width: 0;
-  transition: .5s;
+  transition: .6s;
 }
 
 nav a:hover {
@@ -188,6 +180,7 @@ nav.open-menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .user-left a {
@@ -207,8 +200,6 @@ nav.open-menu {
 
 footer {
   background-color: #1b2024;
-  height: auto;
-  width: 100vw;
   text-align: center;
 }
 
@@ -239,8 +230,38 @@ footer {
 
 /* 一覧ページ */
 .contents {
-  height: calc(100vh - 60px);
-  overflow: scroll;
+  min-height: calc(100vh - 120px);
+}
+
+.search {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.search-input {
+  width: 500px;
+  height: 45px;
+  font-size: 18px;
+}
+
+.search-btn {
+  height: 45px;
+  width: 100px;
+  font-size: 20px;
+  border-radius: 30px;
+  background-color: white;
+  border: black 1px solid;
+  outline: none;
+}
+
+.search-btn:hover {
+  background-color: whitesmoke;
+}
+
+.no-search {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 150px;
 }
 
 h1 {
@@ -272,6 +293,11 @@ h1 {
   overflow: hidden;
 }
 
+.tweet-user-icon {
+  width: auto;
+  height: 100%;
+}
+
 .user-name {
   color: #1b2024;
   font-size: 30px;
@@ -287,7 +313,7 @@ h1 {
 
 .new-form {
   text-align: center;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 120px);
   padding: 30px;
 }
 
@@ -295,8 +321,6 @@ h1 {
   width: 60%;
   padding: 20px;
   margin: 0 auto;
-  border: lightblue 10px solid;
-  border-radius: 12px;
   background-color: #ffffff;
 }
 
@@ -334,20 +358,19 @@ h1 {
   font-size: 30px;
   border: 5px #7c7889 solid;
   border-radius: 40px;
-  background-color: transparent;
+  background-color: white;
   padding: 0 5rem;
   margin: 20px 0 0 0;
 }
 
 .submit-btn:hover {
-  background-color: #00aaff;
+  background-color: whitesmoke;
 }
 
 /* ユーザー詳細ページ */
 .user-show {
-  padding: 35px;
-  height: calc(100vh - 60px);
-  overflow: scroll;
+  min-height: calc(100vh - 120px);
+  padding: 35px 0;
 }
 
 .users-name {
@@ -522,16 +545,25 @@ table td {
   border: blueviolet 3px solid;
   border-radius: 30px;
   font-size: 16px;
+  background-color: white;
+}
+
+.profile-button a:hover {
+  background-color: whitesmoke;
 }
 
 .delete-button a {
   text-align: center;
-  width: 40%;
+  width: 60%;
   color: #1b2024;
   margin: 10px auto;
   padding: 10px 20px;
   border: blueviolet 3px solid;
   border-radius: 30px;
+}
+
+.delete-button a:hover {
+  background-color: whitesmoke;
 }
 
 .create-time {
@@ -540,7 +572,7 @@ table td {
 
 .my-user-contents {
   width: 40vw;
-  height: 100vh;
+  height: 85vh;
   overflow: scroll;
 }
 
@@ -561,14 +593,21 @@ table td {
 .no-tweets {
   text-align: center;
   font-size: 30px;
-  margin-top: 100px;
-  height: 300px;
+  margin: 150px 0;
 }
 
 /* ユーザー登録画面 */
+.sign-in {
+  width: 50%;
+  height: 500px;
+  margin: 83px auto;
+  background-color: #ffffff;
+}
+
 .sign-up {
   width: 50%;
   margin: 50px auto;
+  padding-bottom: 20px;
   background-color: #ffffff;
 }
 
@@ -626,7 +665,7 @@ table td {
 .sign-up-submit {
   width: 300px;
   height: 40px;
-  background-color: #FF3333;
+  background-color: #00aaff;
   border: none;
   color: #ffffff;
   font-size: 16px;
@@ -635,7 +674,7 @@ table td {
 }
 
 .sign-up-submit:hover {
-  background-color: #CC3333;
+  background-color: #305989;
 }
 
 .sign-up-link a{
@@ -645,23 +684,38 @@ table td {
   padding: 10px;
   text-align: center;
   color: #ffffff;
-  background-color: #00aaff;
+  background-color: #FF3333;
 }
 
 .sign-up-link a:hover {
-  background-color: #305989;
+  background-color: #CC3333;
+}
+
+.delete-user a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF3333;
+  width: 300px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 3px;
+}
+
+.delete-user a:hover {
+  background-color: #CC3333;
 }
 
 /* トレーニング入力ページ */
 
 .motion-form {
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 120px);
 }
 
 .motion-table {
   text-align: center;
   padding: 20px;
-  margin: 100px auto;
+  margin: 50px auto;
   border-radius: 12px;
 }
 
@@ -700,12 +754,16 @@ table td {
   padding: 10px 100px;
   border: blueviolet 3px solid;
   border-radius: 30px;
+  background-color: white;
+}
+
+.edit-button a:hover {
+  background-color: whitesmoke;
 }
 
 /* ツイート詳細ページ */
 .show-content {
-  height: 100vh;
-  overflow: scroll;
+  min-height: calc(100vh - 120px);
 }
 
 .show-text {
@@ -758,9 +816,17 @@ strong a {
 }
 
 .comment {
+  position: relative;
   text-align: left;
   padding: 0 15px 15px 15px;
   margin-bottom: 10px;
   background-color: #d4f0fd;
 }
 
+.comment-delete a {
+  color: red;
+  position: absolute;
+  right: 10px;
+  top: -50px;
+  padding: 4px;
+}

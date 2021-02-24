@@ -47,7 +47,7 @@
       <%= link_to "修正をする",  edit_motion_path(@motion), data: {"turbolinks"=>false} %>
     </div>
     <div class="edit-button">
-      <%= link_to "削除する",  motion_path(@motion), data: {"turbolinks"=>false}, method: :delete %>
+      <%= link_to "削除する",  motion_path(@motion), data: {"turbolinks"=>false}, method: :delete, data: { confirm: 'この記録を削除してもよろしいですか？' } %>
     </div>
   </div>
 </div>

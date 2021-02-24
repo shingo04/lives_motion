@@ -5,6 +5,8 @@
       <%= f.submit "検索", class: "search-btn" %>
     <% end %>
   </div>
+  <% if @tweets.present? %>
+  <h1><%= "”#{params[:keyword]}”に関連するツイート" %></h1>
   <div class="contents">
     <% @tweets.each do |tweet| %>
       <div class="content">
@@ -12,9 +14,9 @@
           <%= link_to(user_path(tweet.user.id), data: {"turbolinks"=>false}) do %>
             <div class="user-icon">
               <% if tweet.user.image? %>
-                <%= image_tag tweet.user.image.url, class: "tweet-user-icon" %>
+                <%= image_tag tweet.user.image.url %>
               <% else %>
-                <%= image_tag "/assets/default.png", class: "tweet-user-icon" %>
+                <%= image_tag "/assets/default.png", :size => '50x50' %>
               <% end %>
             </div>
           <% end %>
@@ -30,4 +32,9 @@
       </div>
     <% end %>
   </div>
+  <% else %>
+    <div class="no-search">
+      <%= "”#{params[:keyword]}”に関連するツイートはありません" %>
+    </div>
+  <% end %>
 </div>

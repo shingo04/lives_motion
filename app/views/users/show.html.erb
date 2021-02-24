@@ -13,9 +13,9 @@
         <td class="users">
           <div class="user-icon-show" id="user-icon">
             <% if @user.image? %>
-              <%= image_tag @user.image.url %>
+              <%= image_tag @user.image.url, class: "user-icon-motion" %>
             <% else %>
-              <%= image_tag "/assets/default.png", :size => '80x80' %>
+              <%= image_tag "/assets/default.png", class: "user-icon-motion" %>
             <% end %>
           </div>
           <% if user_signed_in? && current_user.id == @user.id %>
@@ -35,34 +35,34 @@
           <%= @user.nickname %>
         </td>
       </tr>
-        <% if user_signed_in? && current_user.id == @user.id %>
-          <tr>
-            <th>年齢</th>
-            <td><span id="age"><%= @user.age %></span>歳</td>
-          </tr>
-          <tr>
-            <th>性別</th>
-            <td><span class="hidden" id="gender"><%= @user.gender.id %></span><%= @user.gender.name %></td>
-          </tr>
-          <tr>
-            <th>身長</th>
-            <td><span id="height"><%= @user.height %></span>cm</td>
-          </tr>
-          <tr>
-            <th>体重</th>
-            <td><span id="weight"><%= @user.weight %></span>kg</td>
-          </tr>
-          <tr>
-            <th>基礎代謝</th>
-            <td><span id="bmr"><%=  %></span>kcal</td>
-          </tr>
-        <% end %>
+      <% if user_signed_in? && current_user.id == @user.id %>
         <tr>
-          <td colspan="2" class="introduce">自己紹介</td>
+          <th>年齢</th>
+          <td><span id="age"><%= @user.age %></span>歳</td>
         </tr>
         <tr>
-          <td colspan="2" class="introduce-content"><%= @user.introduction %></td>
+          <th>性別</th>
+          <td><span class="hidden" id="gender"><%= @user.gender.id %></span><%= @user.gender.name %></td>
         </tr>
+        <tr>
+          <th>身長</th>
+          <td><span id="height"><%= @user.height %></span>cm</td>
+        </tr>
+        <tr>
+          <th>体重</th>
+          <td><span id="weight"><%= @user.weight %></span>kg</td>
+        </tr>
+        <tr>
+          <th>基礎代謝</th>
+          <td><span id="bmr"><%=  %></span>kcal</td>
+        </tr>
+      <% end %>
+      <tr>
+        <td colspan="2" class="introduce">自己紹介</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="introduce-content"><%= @user.introduction %></td>
+      </tr>
     </table>
     <% if user_signed_in? && current_user.id == @user.id %>
       <div class="profile-button">
@@ -73,10 +73,7 @@
   <div class="motion-tweet">
     <% if user_signed_in? && current_user.id == @user.id %>
       <div class="my-user-motions">
-        <div class="user-motions">
-          <%= "#{@user.nickname}さんのトレーニング記録" %>
-        </div>
-        <% if @tweets.present? %>
+        <% if @motions.present? %>
           <div class="motion-result">
             <% @motions.each do |motion| %>
               <table>
@@ -122,9 +119,6 @@
     <% end %>
     <% if user_signed_in? && current_user.id == @user.id %>
       <div class="my-user-tweets">
-        <div class="user-motions">
-          <%= "#{@user.nickname}さんのツイート" %>
-        </div>
         <% if @tweets.present? %>
           <div class="my-user-contents">
             <% @tweets.each do |tweet| %>
@@ -139,7 +133,7 @@
                   <%= l tweet.created_at %>
                 </div>
                 <div class="delete-button">
-                  <%= link_to "削除する",  tweet_path(tweet), data: {"turbolinks"=>false}, method: :delete %>
+                  <%= link_to "削除する",  tweet_path(tweet), data: {"turbolinks"=>false}, method: :delete, data: { confirm: 'ツイートを削除してもよろしいですか？' } %>
                 </div>
               </div>
             <% end %>
@@ -152,9 +146,6 @@
       </div>
     <% else %>
       <div class="user-tweets">
-        <div class="user-motions">
-          <%= "#{@user.nickname}さんのツイート" %>
-        </div>
         <% if @tweets.present? %>
           <div class="contents">
             <% @tweets.each do |tweet| %>
