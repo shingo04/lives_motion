@@ -1,7 +1,6 @@
 <div class="sign-up">
 <div class="sign-up-title">ユーザー情報入力</div>
 <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
-<%= render "devise/shared/error_messages" %>
 
   <div class="field">
     <%= f.label :email, "メールアドレス", class: "sign-up-text" %><span class="must"> ※</span><br />
