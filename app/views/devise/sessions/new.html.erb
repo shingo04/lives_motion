@@ -2,7 +2,6 @@
   <div class="sign-in">
     <div class="sign-up-title">ユーザー情報入力</div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
       <div class="field">
         <%= f.label :email, "メールアドレス", class: "sign-up-text" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'sign-up-form' %>

@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :nickname, length: { maximum: 10, message: "10文字以内" }
+    validates :nickname, length: { maximum: 10}
     with_options numericality: { other_than: 0 } do
       validates :age
       validates :height

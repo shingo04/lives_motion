@@ -313,7 +313,7 @@ h1 {
 
 .new-form {
   text-align: center;
-  height: calc(100vh - 120px);
+  height: 100vh;
   padding: 30px;
 }
 

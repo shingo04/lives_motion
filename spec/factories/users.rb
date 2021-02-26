@@ -7,7 +7,7 @@ FactoryBot.define do
     age                   { 21 }
     height                { 170 }
     weight                { 57 }
-    bmr                   { 1567 }
+    gender_id             { 1 }
     introduction          { "こんにちは" }
   end
 end

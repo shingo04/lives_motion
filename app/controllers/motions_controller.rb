@@ -21,7 +21,7 @@ class MotionsController < ApplicationController
 
   def update
     if @motion.update(motion_params)
-      redirect_to user_path(current_user.id)
+      redirect_to motion_path(@motion)
     else
       render :edit
     end

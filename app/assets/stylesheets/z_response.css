@@ -80,7 +80,7 @@
 }
 
 /* スマートフォン表示時 */
-@media (max-width: 375px) {
+@media (max-width: 750px) {
   header {
     height: 60px;
     padding: 0;

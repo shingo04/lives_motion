@@ -133,7 +133,7 @@
                   <%= l tweet.created_at %>
                 </div>
                 <div class="delete-button">
-                  <%= link_to "削除する",  tweet_path(tweet), data: {"turbolinks"=>false}, method: :delete, data: { confirm: 'ツイートを削除してもよろしいですか？' } %>
+                  <%= link_to "削除する",  tweet_path(tweet), data: {"turbolinks"=>false}, id: 'delete_button', method: :delete, data: { confirm: 'ツイートを削除してもよろしいですか？' } %>
                 </div>
               </div>
             <% end %>
