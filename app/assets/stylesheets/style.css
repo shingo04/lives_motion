@@ -46,10 +46,6 @@ header {
   align-items: center;
   height: 120px;
   width: 100vw;
-  background-image: url('/images/header.jpg');
-  background-position: 0 40%;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 20px;
 }
 
