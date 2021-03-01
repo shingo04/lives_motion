@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: lives_motion_production
-  username: lives_motion
-  password: <%= ENV['LIVES_MOTION_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
