@@ -145,6 +145,7 @@ a {
   width: 55px;
   overflow: hidden;
   margin-right: 15px;
+  background-color: black;
 }
 
 .header-user-icon {
@@ -291,6 +292,7 @@ h1 {
   height: 55px;
   width: 55px;
   overflow: hidden;
+  background-color: black;
 }
 
 .tweet-user-icon {
@@ -392,6 +394,7 @@ h1 {
   width: 80px;
   overflow: hidden;
   margin-right: 50px;
+  background-color: black;
 }
 
 .user-icon-show:hover {
