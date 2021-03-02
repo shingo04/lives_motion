@@ -14,9 +14,7 @@
           <%= link_to(user_path(tweet.user.id), data: {"turbolinks"=>false}) do %>
             <div class="user-icon">
               <% if tweet.user.image? %>
-                <%= image_tag tweet.user.image.url %>
-              <% else %>
-                <%= image_tag "/assets/default.png", :size => '50x50' %>
+                <%= image_tag tweet.user.image.url, class: "tweet-user-icon" %>
               <% end %>
             </div>
           <% end %>

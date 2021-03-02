@@ -13,8 +13,6 @@
             <div class="user-icon">
               <% if tweet.user.image? %>
                 <%= image_tag tweet.user.image.url, class: "tweet-user-icon" %>
-              <% else %>
-                <%= image_tag "/assets/default.png", class: "tweet-user-icon" %>
               <% end %>
             </div>
           <% end %>

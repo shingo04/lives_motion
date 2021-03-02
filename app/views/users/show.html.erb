@@ -14,8 +14,6 @@
           <div class="user-icon-show" id="user-icon">
             <% if @user.image? %>
               <%= image_tag @user.image.url, class: "user-icon-motion" %>
-            <% else %>
-              <%= image_tag "/assets/default.png", class: "user-icon-motion" %>
             <% end %>
           </div>
           <% if user_signed_in? && current_user.id == @user.id %>
