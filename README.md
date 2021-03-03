@@ -2,29 +2,28 @@
 
 ## 💬 Usage
 
-`git clone https://github.com/shingo04/lives_motion.git`
-`cd lives_motion`
-`bundle install`
-`rails db:create`
-`rails db:migrate`
+`git clone https://github.com/shingo04/lives_motion.git`  
+`cd lives_motion`  
+`bundle install`  
+`rails db:create`  
+`rails db:migrate`  
 `rails s`
 
-## アプリ名
-# Lives Motion
+# アプリ名
+## Lives Motion
 
-## アプリ概要
+# アプリ概要
 ランニングや腹筋などのトレーニングを記録することのできるアプリです。
 さらにツイート機能があり、トレーニングの方法や記録を共有することができます。
 
-## 🌐 App URL
+# 🌐 App URL
+http://18.181.126.31/
 
-### http://18.181.126.31/
-
-#### Basic認証
+### Basic認証
 ・ID: inori  
 ・Pass: 0137
 
-#### テスト用アカウント
+### テスト用アカウント
 ・メールアドレス: aa@com  
 ・パスワード: 111111
 
