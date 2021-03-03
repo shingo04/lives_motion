@@ -13,7 +13,7 @@
         <td class="users">
           <div class="user-icon-show" id="user-icon">
             <% if @user.image? %>
-              <%= image_tag @user.image.url, class: "user-icon-motion" %>
+              <%= image_tag @user.image.url, class: "header-user-icon" %>
             <% end %>
           </div>
           <% if user_signed_in? && current_user.id == @user.id %>
